@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div>
+
+        <h1 class="center">Opponent</h1>
+
+        <!-- <p class="game"><img id="opponent_img" src="{{url_for('static', filename='images/opponent.png')}}"></p> -->
+        <p class="game"><img id="opponent_img" src="../static/images/opponent.png"></p>
+
+        <h1 class="center">Player</h1>
+
+        <p class="game">
+            <a href="" id="paper"><img src="{{url_for('static', filename='images/paper.png')}}"></a>
+            <a href="" id="scissor"><img src="{{url_for('static', filename='images/scissor.png')}}"></a>
+            <a href="" id="stone"><img src="{{url_for('static', filename='images/stone.png')}}"></a>
+        </p>
+
+        <h1 class="center" id="result" style="color:brown"></h1>
+
+        <div class="center">
+            <a href="" class="btn btn--secondary" id="goback">Go Back</a>
+        </div>
+
+    </div>
+
+    <script src="{{url_for('static', filename='js/game.js')}}"></script>
+
+{% endblock%}

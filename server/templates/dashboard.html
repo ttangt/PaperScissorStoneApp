@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <h1 class="center">Hello {{session["user"]["name"]}}</h1>
+
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="center">
+                <a href="/game" class="btn">Play Game</a>
+            </div>
+
+            <div class="center">
+                <a href="/user/signout" class="btn btn--secondary">Sign Out</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="center">Results</h2>
+
+            <!-- <p> -->
+                <!-- <strong>ID: </strong> {{session["user"]["results"]}}<br> -->
+                <!-- <strong>ID: </strong> {{session["user"]["_id"]}}<br> -->
+                <!-- <strong>Name: </strong> {{session["user"]["name"]}}<br> -->
+                <!-- <strong>Email: </strong> {{session["user"]["email"]}}<br> -->
+                <!-- <strong>Game Results: </strong> -->
+            <!-- </p> -->
+
+            {% for key, value in session["user"]["results"].items()|sort(attribute="0") %}
+                <p><strong>{{key}}:</strong> {{value}}</p>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
